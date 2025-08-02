@@ -7,7 +7,9 @@ if (redisUrl) {
   redisClient = redis.createClient({ url: redisUrl });
 
   redisClient.on('error', (err) => {
-    console.error('❌ Redis connection error:', err.message);
+    if (!redisClient.isOpen) {
+      console.error('❌ Redis connection error:', err.message);
+    }
   });
 
   redisClient.connect()
