@@ -1,9 +1,11 @@
+'use client';
+
 import { useEffect } from 'react';
-import { useStore } from '../store/useStore';
-import API from '../utils/api';
-import ChatPanel from '../components/ChatPanel';
-import CodeTabs from '../components/CodeTabs';
-import ComponentPreview from '../components/ComponentPreview';
+import { useStore } from '../../store/useStore';
+import API from '../../utils/api';
+import ChatPanel from '../../components/ChatPanel';
+import CodeTabs from '../../components/CodeTabs';
+import ComponentPreview from '../../components/ComponentPreview';
 
 export default function Builder() {
   const { selectedSession, setCode } = useStore();
